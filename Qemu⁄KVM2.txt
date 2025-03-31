@@ -1,0 +1,87 @@
+#!/bin/bash
+
+#   https://www.youtube.com/watch?v=gLnRBbWMLvs
+
+scpu | grep -i Virtualization
+
+sudo pacman -S qemu-full qemu-img libvirt virt-install virt-manager virt-viewer edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned
+
+
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+sudo systemctl status libvirtd
+
+#You need to uncomment & set line to:    firewall_backend=iptables in /etc/libvirt/network.conf
+#add sed -i cmd #firewall_backend = "nftables"
+# sed 's/find/replace/' file
+
+
+sudo usermod -aG libvirt $USER
+
+#https://www.youtube.com/watch?v=OwFZW8x8SsY
+
+
+sudo virsh net-start default
+sudo virsh net-autostart default
+sudo virsh net-list --all
+
+
+
+#GPU passthrough app https://www.youtube.com/watch?v=ttMAGxJ4pUo
+#https://www.youtube.com/watch?v=g--fe8_kEcw
+#https://www.youtube.com/watch?app=desktop&v=2aHQbg9j_gI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#check if virtualisation enable iommu
+if compgen -G "/sys/kernel/iommu_groups/*/devices/*" > /dev/null; then
+    echo "AMD's IOMMU / Intel's VT-D is enabled in the BIOS/UEFI."
+else
+    echo "AMD's IOMMU / Intel's VT-D is not enabled in the BIOS/UEFI"
+fi
+
+
+#OR
+
+#if systool -m kvm_amd -v &> /dev/null || systool -m kvm_intel -v &> /dev/null ; then
+    echo "AMD-V / VT-X is enabled in the BIOS/UEFI."
+#else
+    echo "AMD-V / VT-X is not enabled in the BIOS/UEFI"
+#fi
+
+
+#OR - Debian
+sudo apt-get update
+sudo apt-get install cpu-checker
+#then check
+kvm-ok
+#If the CPU is enabled, you should see something like:
+#INFO: /dev/kvm exists
+#KVM acceleration can be used
+
+
