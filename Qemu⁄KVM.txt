@@ -12,6 +12,7 @@ lscpu | grep -i Virtualization
 echo
 echo "Can you see VT-x or AMD-VI ?"
 read -p "If so, ur in luck press enter to proceed!!!"
+# If not go into your bios and enable virtualisation
 
 sudo pacman -S qemu-full qemu-img libvirt virt-install virt-manager virt-viewer edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned
 
