@@ -9,7 +9,7 @@ sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 sudo systemctl status libvirtd
 
-#You need to set firewall_backend=iptables in /etc/libvirt/network.conf
+#You need to uncomment and set line: firewall_backend=iptables in /etc/libvirt/network.conf
 
 sudo usermod -aG libvirt $USER
 
