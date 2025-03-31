@@ -9,8 +9,8 @@ TIMESTAMP=`date +%Y%m%d.%R`
 lscpu | grep -i Virtualization
 #add check intel amd
 echo
-echo
-read -p "Can you see VT-x or AMD-VI, if so, ur in luck press enter to proceed"
+echo "Can you see VT-x or AMD-VI ?"
+read -p "If so, ur in luck press enter to proceed!!!"
 
 sudo pacman -S qemu-full qemu-img libvirt virt-install virt-manager virt-viewer edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned
 
