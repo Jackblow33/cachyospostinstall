@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #https://www.youtube.com/watch?v=gLnRBbWMLvs
+#https://www.youtube.com/watch?v=OwFZW8x8SsY
 
 #VARIABLES
 TIMESTAMP=`date +%Y%m%d.%R`
@@ -18,16 +19,12 @@ sudo pacman -S qemu-full qemu-img libvirt virt-install virt-manager virt-viewer 
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 sudo systemctl status libvirtd
+sudo usermod -aG libvirt $USER
 
-#You need to uncomment and set line: firewall_backend=iptables in /etc/libvirt/network.conf
+#uncomment and edit line: firewall_backend=iptables in /etc/libvirt/network.conf
 cp /etc/libvirt/network.conf /etc/libvirt/network.conf.$TIMESTAMP
 #sed -i "s/Original)Text/firewall_backend=iptables/" /etc/libvirt/network.conf
 
-sudo usermod -aG libvirt $USER
-
-#https://www.youtube.com/watch?v=OwFZW8x8SsY
-
-
-sudo virsh net-start default
-sudo virsh net-autostart default
-sudo virsh net-list --all
+#sudo virsh net-start default
+#sudo virsh net-autostart default
+#sudo virsh net-list --all
