@@ -25,8 +25,8 @@ sudo usermod -aG libvirt $USER
 #uncomment and edit line: firewall_backend=iptables in /etc/libvirt/network.conf
 cp /etc/libvirt/network.conf /etc/libvirt/network.conf.$TIMESTAMP
 #sed -i "s/#firewall_backend = "nftables"/firewall_backend="iptables"/" /etc/libvirt/network.conf    #Not working yet
-#sed 's/#firewall_backend = "nftables"/firewall_backend="iptables"/' /etc/libvirt/network.conf #notworking
-#sudo /bin/sh -c 'echo |firewall_backend="iptables"| >> /etc/libvirt/network.conf'
+#sed 's/#firewall_backend = "nftables"/firewall_backend="iptables"/' /etc/libvirt/network.conf       #notworking
+#sudo /bin/sh -c 'echo |firewall_backend="iptables"| >> /etc/libvirt/network.conf'                   #maybe
 # sed 's/find/replace/' file
 
 #sudo virsh net-start default
