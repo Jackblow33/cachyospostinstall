@@ -10,7 +10,7 @@ TIMESTAMP=`date +%Y%m%d.%R`
 lscpu | grep -i Virtualization
 #add check intel amd
 echo
-echo "Can you see VT-x or AMD-VI ?"
+echo "Can you see VT-x or AMD-V ?"
 read -p "If so, ur in luck press enter to proceed!!!"
 # If not go into your bios and enable virtualisation
 
