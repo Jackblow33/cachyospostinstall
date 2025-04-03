@@ -2,6 +2,11 @@
 
 #Source https://wiki.cachyos.org/features/chwd/
 
+#Check for driver version before installing
+# If driver: nouveau. Then you have open sources driver. Update might be a good idea...
+inxi -G
+
+#CachyOS check_hardware command
 sudo chwd -a
 
 chwd --list-all
