@@ -35,3 +35,17 @@ sudo chwd -i  nvidia-dkms
 
 #More infos
 #chwd --help
+
+#Packages
+#cachyos-extra-v3/egl-gbm              1.1.2.1-1.1     0.03 MiB       0.01 MiB
+#cachyos-extra-v3/egl-x11              1.0.0-1.1       0.14 MiB       0.04 MiB
+#cachyos-v3/libxnvctrl                 570.133.07-2    0.45 MiB       0.07 MiB
+#cachyos-v3/lib32-nvidia-utils         570.133.07-2  246.47 MiB      49.56 MiB
+#cachyos-v3/lib32-opencl-nvidia        570.133.07-2   20.47 MiB       2.68 MiB
+#cachyos-extra-v3/libva-nvidia-driver  0.0.13-1.1      0.11 MiB       0.04 MiB
+#cachyos-v3/linux-cachyos-nvidia-open  6.14.0-4       18.42 MiB      17.53 MiB
+#cachyos-v3/nvidia-settings            570.133.07-2    1.54 MiB       0.76 MiB
+#cachyos-v3/nvidia-utils               570.133.07-2  789.35 MiB     269.07 MiB
+#cachyos-v3/opencl-nvidia              570.133.07-2   62.71 MiB       5.27 MiB
+
+
